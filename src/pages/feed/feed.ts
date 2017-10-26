@@ -15,9 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedPage {
 
+  public objeto_feed = {
+    titulo:"Hadagalberto Júnior",
+    data:"25/10/2017",
+    descricao:"Estou começando o desenvolvimento em Ionic",
+    qntd_likes:15,
+    qntd_comm:5,
+    time_comment:"11h atrás"
+  };
+
   public nome_usuario:string = "Júnior";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  public newLike(){
+    this.objeto_feed.qntd_likes = this.objeto_feed.qntd_likes+1;
   }
 
   public soma(n1:number, n2:number): void{
