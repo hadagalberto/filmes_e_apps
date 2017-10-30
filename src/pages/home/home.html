@@ -1,17 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Que merda ein?</ion-title>
+    <ion-title>Filmes Populares</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card *ngFor="let filme of listaFilmes">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/images/marty-avatar.png">
+      </ion-avatar>
+      <h2 class="tit">{{ filme.original_name }}</h2>
+      <p>{{ filme.release_date }}</p>
+    </ion-item>
+
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">
+
+    <ion-card-content>
+      <p>{{ filme.overview }}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="newLike();">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{ filme.vote_count }} Votos</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>Média de votos: {{ filme.vote_average }}</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+
+        <p>{{ filme.original_title }}</p>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
