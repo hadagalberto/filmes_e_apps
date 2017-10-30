@@ -1,25 +1,26 @@
-#Filmes e Apps
+Filmes e Séries
+===================
 
-Projeto que permite mostrar informações sobre filmes e séries
 
-## How to use this template
+Esse é um App mobile que permite mostrar informações sobre **Filmes e Séries**. Ele está sendo desenvolvido em Ionic e usa a API do [TheMovieDB](http://themoviedb.org/) para popular os dados do App.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+----------
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
 
-### With the Ionic CLI:
+Como usar
+-------------
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Siga os passos a seguir e você será capaz de rodar esse projeto em instantes e sem nenhum problema!
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
-```
+**Passos a seguir:**
 
-Then, to run it, cd into `myTabs` and run:
+- Faça um clone desse repositório:
+`git clone https://github.com/hadagalberto/ionic-app-simples.git`
+- Instale as dependências nodejs:
+- `npm install`
+- Rode o projeto:
+- `ionic serve`
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+--------
+
+**Lembrando que esse app ainda está em fase de desenvolvimento, ainda falta muita coisa para estar funcionando como deveria**
