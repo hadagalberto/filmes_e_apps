@@ -21,15 +21,6 @@ export class FeedPage {
 
   public listaFilmes = new Array<any>();
 
-  public objeto_feed = {
-    titulo:"Hadagalberto Júnior",
-    data:"25/10/2017",
-    descricao:"Estou começando o desenvolvimento em Ionic",
-    qntd_likes:15,
-    qntd_comm:5,
-    time_comment:"11h atrás"
-  };
-
   public nome_usuario:string = "Júnior";
 
   constructor(
@@ -39,16 +30,12 @@ export class FeedPage {
     ) {
   }
 
-  public newLike(){
-    this.objeto_feed.qntd_likes = this.objeto_feed.qntd_likes+1;
-  }
-
   public soma(n1:number, n2:number): void{
     alert(n1 + n2)
   }
 
   ionViewDidLoad() {
-    this.movieProvider.getFilmes().subscribe(
+    this.movieProvider.getFilmesPopulares().subscribe(
       data=>{
         const response = (data as any);
         const obj = JSON.parse(response._body);

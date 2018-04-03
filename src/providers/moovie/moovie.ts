@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { ApiKey } from './private';
 
 /*
   Generated class for the MoovieProvider provider.
@@ -13,9 +14,9 @@ export class MoovieProvider {
 
   private baseUrl = "https://api.themoviedb.org/3";
 
-  private apiKey = "9bc15631d6ea5d43427a22b79101070b";
-
   private lang = "pt-BR";
+
+  apiKey = ApiKey;
 
   constructor(public http: Http) {
     console.log('Hello MoovieProvider Provider');
@@ -27,6 +28,10 @@ export class MoovieProvider {
 
   getSeriesPopulares(){
     return this.http.get(this.baseUrl + "/tv/popular?api_key=" + this.apiKey + "&language=" + this.lang);    
+  }
+
+  getCustomLink(point:String, methods:String){
+    return this.http.get(this.baseUrl + "")
   }
 
 }
